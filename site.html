@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes-AMG Petronas F1 Team</title>
+  
+  <style>
+    /* --- VARIÁVEIS DE CORES E ESTILOS --- */
+    :root {
+      --bg-color: #000000;
+      --card-bg: #121212;
+      --petronas-green: #00A19C;
+      --silver: #C0C0C0;
+      --white: #FFFFFF;
+      --text-gray: #A0A0A0;
+      --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-main);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* --- CABEÇALHO / NAVBAR --- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-bottom: 2px solid var(--petronas-green);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .logo span {
+      color: var(--petronas-green);
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--petronas-green);
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0,161,156,0.1) 0%, rgba(0,0,0,1) 100%);
+      padding: 0 1rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background-color: var(--petronas-green);
+      color: var(--bg-color);
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #00b8b2;
+      transform: translateY(-2px);
+    }
+
+    /* --- SEÇÃO PILOTOS --- */
+    .drivers {
+      padding: 4rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 1px solid var(--petronas-green);
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    .drivers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--petronas-green);
+    }
+
+    .card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card .number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--petronas-green);
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: var(--text-gray);
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #222;
+      color: var(--text-gray);
+      font-size: 0.9rem;
+    }
+
+    /* --- RESPONSIVIDADE --- */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      header { flex-direction: column; gap: 1rem; }
+      nav a { margin: 0 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">MERCEDES-AMG <span>PETRONAS</span></div>
+    <nav>
+      <a href="#home">Início</a>
+      <a href="#pilotos">Pilotos</a>
+      <a href="#interacao">Garagem</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <h1>A Batalha Pela Performance</h1>
+    <p>Inovação, precisão e paixão no topo do automobilismo mundial.</p>
+    <button class="btn" id="btnRadio">Ouvir Rádio da Equipe</button>
+  </section>
+
+  <!-- SEÇÃO PILOTOS -->
+  <section class="drivers" id="pilotos">
+    <div style="text-align: center;">
+      <h2 class="section-title">Pilotos do Grid</h2>
+    </div>
+    
+    <div class="drivers-grid">
+      <div class="card">
+        <div class="number">63</div>
+        <h3>George Russell</h3>
+        <p>Grã-Bretanha</p>
+      </div>
+      <div class="card">
+        <div class="number">12</div>
+        <h3>Kimi Antonelli</h3>
+        <p>Itália</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; Projeto demonstrativo para GitHub Pages — AMG Petronas F1 Fan Site.</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Script de interação simples
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnRadio = document.getElementById('btnRadio');
+
+      const mensagensRadio = [
+        "Box, box, box! Troca para pneus macios.",
+        "Hammertime! Acelere tudo agora.",
+        "Pneu em ótimas condições, continue empurrando!",
+        "Modo de ultrapassagem ativado. Tudo sob controle."
+      ];
+
+      btnRadio.addEventListener('click', () => {
+        // Escolhe uma mensagem aleatória
+        const mensagemAleatoria = mensagensRadio[Math.floor(Math.random() * mensagensRadio.length)];
+        
+        // Exibe o alerta do engenheiro
+        alert(`📻 ENGENHEIRO DE PISTA:\n\n"${mensagemAleatoria}"`);
+      });
+    });
+  </script>
+</body>
+</html>
