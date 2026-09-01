@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Kartaju - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container"><div class="logo-placeholder">LOGOTIPO KARTAJU</div></div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="cadastro.html" class="active">Cadastro</a></li>
+            <li><a href="loja.html">Loja</a></li>
+            <li><a href="carrinho.html">Carrinho</a></li>
+            <li><a href="trofeus.html">Galeria de Troféus</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="carros.html">Galeria de Karts</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header><h1>Cadastro de Piloto</h1></header>
+        <div class="card" style="max-width: 500px; margin: 0 auto;">
+            <div class="img-placeholder">FOTO DO PILOTO</div>
+            <form onsubmit="event.preventDefault(); alert('Piloto Cadastrado!');">
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Equipe</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" required>
+                </div>
+                <button type="submit" class="btn-red">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

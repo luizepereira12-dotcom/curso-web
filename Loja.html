@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Kartaju - Loja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container"><div class="logo-placeholder">LOGOTIPO KARTAJU</div></div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="loja.html" class="active">Loja</a></li>
+            <li><a href="carrinho.html">Carrinho</a></li>
+            <li><a href="trofeus.html">Galeria de Troféus</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="carros.html">Galeria de Karts</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header><h1>Loja de Produtos</h1></header>
+        <div class="grid">
+            <div class="card">
+                <div class="img-placeholder"><img src="/Gemini_Generated_Image_5gyyoa5gyyoa5gyy.png" alt="..."style="width: 100%; border-radius: 5px;">></div>
+                <h3>Boné Kartaju</h3>
+                <p>R$ 89,90</p><br>
+                <button onclick="adicionarAoCarrinho('Boné Kartaju', 89.90)" class="btn-red">Adicionar ao Carrinho</button>
+            </div>
+            <div class="card">
+                <div class="img-placeholder"><img src="/Gemini_Generated_Image_1r0n381r0n381r0n.png" alt=""style="width: 100%; border-radius: 5px;">></div>
+                <h3>Camiseta Dri-Fit</h3>
+                <p>R$ 119,90</p><br>
+                <button onclick="adicionarAoCarrinho('Camiseta Dri-Fit', 119.90)" class="btn-red">Adicionar ao Carrinho</button>
+            </div>
+            <div class="card">
+                <div class="img-placeholder"><img src="/Gemini_Generated_Image_n7q16zn7q16zn7q1.png" alt=""style="width: 100%; border-radius: 5px;">></div>
+                <h3>Luva de Kart</h3>
+                <p>R$ 149,90</p><br>
+                <button onclick="adicionarAoCarrinho('Luva de Kart', 149.90)" class="btn-red">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

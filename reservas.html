@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartaju - Reservar Bateria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="logo-placeholder">LOGOTIPO KARTAJU</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="reservas.html" class="active">Reservas</a></li>
+            <li><a href="loja.html">Loja</a></li>
+            <li><a href="carrinho.html">Carrinho</a></li>
+            <li><a href="trofeus.html">Galeria de Troféus</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="carros.html">Galeria de Karts</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Reserva de Bateria</h1>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+            <!-- Formulário de Agendamento -->
+            <div class="card">
+                <h2 style="color: var(--vermelho); margin-bottom: 20px; text-transform: uppercase;">Agende seu Horário</h2>
+                <form id="form-reserva" onsubmit="processarReserva(event)">
+                    <div class="form-group">
+                        <label for="tipo-kart">Categoria / Kart</label>
+                        <select id="tipo-kart" required>
+                            <option value="">Selecione uma opção...</option>
+                            <option value="indoor-13hp">Sprint Indoor (13hp) - R$ 90/pessoa</option>
+                            <option value="pro-125cc">Pro 125cc (Profissional) - R$ 160/pessoa</option>
+                            <option value="infantil">Kart Kids - R$ 70/pessoa</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data-reserva">Data da Bateria</label>
+                        <input type="date" id="data-reserva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="horario-reserva">Horário Disponível</label>
+                        <select id="horario-reserva" required>
+                            <option value="">Selecione o horário...</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00">21:00</option>
+                            <option value="22:00">22:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qtd-pilotos">Quantidade de Pilotos (Max: 12)</label>
+                        <input type="number" id="qtd-pilotos" min="1" max="12" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observacoes">Observações / Nome do Grupo</label>
+                        <input type="text" id="observacoes" placeholder="Ex: Bateria dos Amigos">
+                    </div>
+
+                    <button type="submit" class="btn-red" style="margin-top: 10px;">Confirmar Reserva</button>
+                </form>
+            </div>
+
+            <!-- Informações e Pista -->
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="card">
+                    <div class="img-placeholder">IMAGEM DA PISTA / KARTÓDROMO</div>
+                    <h3>Kartódromo Kartaju</h3>
+                    <p style="color: var(--cinza-texto); margin-top: 5px;">Aracaju - Sergipe</p>
+                </div>
+
+                <div class="card" style="text-align: left;">
+                    <h3 style="color: var(--vermelho); margin-bottom: 10px;">Regras da Bateria</h3>
+                    <ul style="color: var(--cinza-texto); margin-left: 20px; line-height: 1.6;">
+                        <li>Chegue com 30 minutos de antecedência para o briefing.</li>
+                        <li>Obrigatório o uso de calçado fechado.</li>
+                        <li>Fornecemos capacete e balaclava higienizada.</li>
+                        <li>Duração: 5 min de aquecimento + 15 min de corrida.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Define a data mínima no calendário como a data atual
+        document.getElementById('data-reserva').min = new Date().toISOString().split('T')[0];
+
+        function processarReserva(event) {
+            event.preventDefault();
+            const kart = document.getElementById('tipo-kart').value;
+            const data = document.getElementById('data-reserva').value;
+            const hora = document.getElementById('horario-reserva').value;
+            const pilotos = document.getElementById('qtd-pilotos').value;
+
+            alert(`Reserva confirmada!\n\nData: ${data} às ${hora}\nPilotos: ${pilotos}\nCategoria: ${kart}\n\nAguardamos você na pista da Kartaju!`);
+            document.getElementById('form-reserva').reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Kartaju - Carrinho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container"><div class="logo-placeholder">LOGOTIPO KARTAJU</div></div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="loja.html">Loja</a></li>
+            <li><a href="carrinho.html" class="active">Carrinho</a></li>
+            <li><a href="trofeus.html">Galeria de Troféus</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="carros.html">Galeria de Karts</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header><h1>Seu Carrinho</h1></header>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Preço</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="lista-carrinho"></tbody>
+        </table>
+        <div style="margin-top: 20px; text-align: right;">
+            <h2>Total: <span id="total-carrinho" style="color: var(--vermelho);">R$ 0,00</span></h2><br>
+            <button onclick="finalizarCompra()" class="btn-red" style="width: 200px;">Finalizar Compra</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
