@@ -22,22 +22,54 @@
         <header><h1>Cadastro de Piloto</h1></header>
         <div class="card" style="max-width: 500px; margin: 0 auto;">
             <div class="img-placeholder">FOTO DO PILOTO</div>
-            <form onsubmit="event.preventDefault(); alert('Piloto Cadastrado!');">
+            <!-- Alterado o onsubmit para chamar a função salvarPiloto -->
+            <form onsubmit="salvarPiloto(event)">
                 <div class="form-group">
                     <label>Nome Completo</label>
-                    <input type="text" required>
+                    <!-- Adicionado id="nome" -->
+                    <input type="text" id="nome" required>
                 </div>
                 <div class="form-group">
                     <label>Equipe</label>
-                    <input type="text" required>
+                    <!-- Adicionado id="equipe" -->
+                    <input type="text" id="equipe" required>
                 </div>
                 <div class="form-group">
                     <label>E-mail</label>
-                    <input type="email" required>
+                    <!-- Adicionado id="email" -->
+                    <input type="email" id="email" required>
                 </div>
                 <button type="submit" class="btn-red">Cadastrar</button>
             </form>
         </div>
     </div>
+
+    <!-- SCRIPT ADICIONADO PARA GUARDAR O CADASTRO -->
+    <script>
+        function salvarPiloto(event) {
+            event.preventDefault();
+
+            // Pega os dados digitados nos campos
+            const novoPiloto = {
+                nome: document.getElementById('nome').value,
+                equipe: document.getElementById('equipe').value,
+                pontos: 0 // Pontuação inicial padrão
+            };
+
+            // Busca os pilotos já salvos ou cria uma lista vazia
+            const pilotos = JSON.parse(localStorage.getItem('pilotos')) || [];
+            
+            // Adiciona o novo piloto na lista
+            pilotos.push(novoPiloto);
+
+            // Salva a lista de volta no localStorage do navegador
+            localStorage.setItem('pilotos', JSON.stringify(pilotos));
+
+            alert('Piloto Cadastrado!');
+            
+            // Redireciona automaticamente para a página de ranking
+            window.location.href = 'ranking.html';
+        }
+    </script>
 </body>
 </html>

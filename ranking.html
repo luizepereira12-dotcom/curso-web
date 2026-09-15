@@ -30,11 +30,38 @@
                     <th>Pontos</th>
                 </tr>
             </thead>
-            <tbody>
+            <!-- Adicionado id="tabela-ranking" no tbody -->
+            <tbody id="tabela-ranking">
                 <tr><td>1º</td><td>Carlos Silva</td><td>Kartaju Red Racing</td><td>120</td></tr>
                 <tr><td>2º</td><td>Marcos Souza</td><td>Sergipe Speed</td><td>105</td></tr>
             </tbody>
         </table>
     </div>
+
+    <!-- SCRIPT ADICIONADO PARA CARREGAR OS PILOTOS CADASTRADOS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tbody = document.getElementById('tabela-ranking');
+            
+            // Busca a lista de pilotos do localStorage
+            const pilotosCadastrados = JSON.parse(localStorage.getItem('pilotos')) || [];
+
+            // Define a posição inicial com base nos pilotos já existentes estaticamente (2 linhas padrão + 1)
+            let posicaoAtual = tbody.getElementsByTagName('tr').length + 1;
+
+            // Insere cada novo piloto na tabela do ranking
+            pilotosCadastrados.forEach(piloto => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${posicaoAtual}º</td>
+                    <td>${piloto.nome}</td>
+                    <td>${piloto.equipe}</td>
+                    <td>${piloto.pontos}</td>
+                `;
+                tbody.appendChild(tr);
+                posicaoAtual++;
+            });
+        });
+    </script>
 </body>
 </html>
